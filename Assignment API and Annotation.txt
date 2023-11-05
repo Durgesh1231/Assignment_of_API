@@ -1,0 +1,170 @@
+Ans 1.
+
+package dateAndTime;
+import java.time.*;
+
+public class moreOnDateTime {
+	public static void main(String[] args) {
+		LocalDate date = LocalDate.now();
+		System.out.println(date);
+		
+		int day=date.getDayOfMonth();
+	    int month=date.getMonthValue();
+	    int year = date.getYear();
+	    
+	    System.out.println(day + "/" + month +"/" + year);
+		
+		
+		
+		LocalTime time = LocalTime.now();
+		System.out.println(time);
+		int hour = time.getHour();
+		int min = time.getMinute();		
+		int sec=time.getSecond();
+		int nano = time.getNano();
+		System.out.println(hour +":"+min+":"+sec+":"+nano);
+	}
+
+}
+
+
+
+Ans 2.
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateToStringConversion {
+    public static void main(String[] args) {
+        // Create a Date object representing the desired date
+        Date date = new Date();  // You can replace this with your specific date
+
+        // Create a SimpleDateFormat object with the desired format
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yy");
+
+        // Use the format() method to convert the date to a string
+        String formattedDate = dateFormat.format(date);
+
+        // Print the formatted date
+        System.out.println("Formatted Date: " + formattedDate);
+    }
+}
+
+
+Ans 3.
+
+Streams-:
+
+It doesn’t store data, it operates on the source data structure i.e collection.
+Java streams support both sequential and parallel processing.
+All the Java stream API interfaces and classes are in java.util.stream package.
+
+example-
+import java.io.*;
+import java.util.*;
+
+class Streams1 {
+	public static void main(String[] args)
+	{
+		List<String> CompanyList = new ArrayList<>();
+
+		
+		CompanyList.add("Ram");
+		CompanyList.add("abhi");
+		CompanyList.add("challa");
+
+		CompanyList.stream().sorted().forEach(
+			System.out::println);
+	}
+}
+
+
+Collections -:
+
+It stores/holds all the data that the data structure currently has in a particular data structure like Set, List or Map.
+They don’t use functional interfaces.
+It supports parallel processing and parallel processing can be very helpful in achieving high performance.
+
+Example-:
+
+import java.io.*;
+import java.util.*;
+
+
+class Collections1 {
+	public static void main(String[] args)
+	{
+		List<String> CompanyList = new ArrayList<>();
+
+		CompanyList.add("Ram");
+		CompanyList.add("Abhi");
+		CompanyList.add("Challa");
+
+		Comparator<String> com = (String o1, String o2) -> o1.compareTo(o2);
+
+		Collections.sort(CompanyList, com);
+		for (String name : CompanyList) {
+			System.out.println(name);
+		}
+	}
+}
+
+
+Ans 4.
+
+An enum is a special "class" that represents a group of constants (unchangeable variables, like final variables).
+
+To create an enum, use the enum keyword (instead of class or interface), and separate the constants with a comma. Note that they should be in uppercase letters:
+
+Example-:
+enum Level {
+  LOW,
+  MEDIUM,
+  HIGH
+}
+
+public class Main {
+  public static void main(String[] args) {
+    Level myVar = Level.MEDIUM;
+
+    switch(myVar) {
+      case LOW:
+        System.out.println("Low level");
+        break;
+      case MEDIUM:
+         System.out.println("Medium level");
+        break;
+      case HIGH:
+        System.out.println("High level");
+        break;
+    }
+  }
+}
+
+Ans 5.
+
+As indicated in the hierarchy of annotations above, Java provides built-in or standard annotations. @Deprecated,
+ @Override, and @SuppressWarnings are available in java.lang & @Retention, @Documented, @Target, and @Inherited 
+are imported from java.lang.annotation package.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
